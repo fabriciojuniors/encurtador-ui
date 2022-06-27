@@ -1,6 +1,9 @@
 
 <div>
     <h6> {{encurtado?.title}} (Acessos: {{encurtado?.views}}) </h6>
-    <i class="bi bi-clipboard" title="Copiar link" (click)="copyURL(encurtado?.encodedURL?? '')"></i>
+    <div>
+        <i style="margin-right: 5px;" class="bi bi-clipboard" title="Copiar link" (click)="copyURL(encurtado?.encodedURL?? '')"></i>
+        <i class="bi bi-trash" (click)="remove(encurtado ?? null)"></i>
+    </div>
     <app-toasts aria-live="polite" aria-atomic="true"></app-toasts>
 </div>

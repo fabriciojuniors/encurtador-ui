@@ -13,5 +13,5 @@
     </form>
 
     <app-toasts aria-live="polite" aria-atomic="true"></app-toasts>
-    <detalhe-encurtador *ngFor="let e of encurtados" [encurtado]="e"></detalhe-encurtador>
+    <detalhe-encurtador (deleted)="refresh()" *ngFor="let e of encurtados" [encurtado]="e"></detalhe-encurtador>
 </div>

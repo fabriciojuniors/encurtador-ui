@@ -27,12 +27,7 @@ export class EncurtadorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.encurtados = localStorage.getItem("encurtados") ? JSON.parse((localStorage.getItem("encurtados") ?? '')) : [];
-
-    this.service.findAllById(this.encurtados.flatMap(e => e.id)).subscribe(
-      (encurtados) => this.encurtados = encurtados
-    )
-
+    this.refresh();
   }
 
   showSuccess(message: string) {
@@ -40,6 +35,16 @@ export class EncurtadorComponent implements OnInit {
   }
   showDanger(message: string) {
     this.toastService.show(message, { classname: 'bg-warning text-light', delay: 10000 });
+  }
+
+  refresh() {
+    this.encurtados = localStorage.getItem("encurtados") ? JSON.parse((localStorage.getItem("encurtados") ?? '')) : [];
+
+    if (this.encurtados.length > 0) {
+      this.service.findAllById(this.encurtados.flatMap(e => e.id)).subscribe(
+        (encurtados) => this.encurtados = encurtados
+      )
+    }
   }
 
   encurtar() {
