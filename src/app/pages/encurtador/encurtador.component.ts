@@ -28,6 +28,11 @@ export class EncurtadorComponent implements OnInit {
 
   ngOnInit(): void {
     this.encurtados = localStorage.getItem("encurtados") ? JSON.parse((localStorage.getItem("encurtados") ?? '')) : [];
+
+    this.service.findAllById(this.encurtados.flatMap(e => e.id)).subscribe(
+      (encurtados) => this.encurtados = encurtados
+    )
+
   }
 
   showSuccess(message: string) {

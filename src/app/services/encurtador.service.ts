@@ -20,4 +20,8 @@ export class EncurtadorService {
     return this.http.post<Encurtador>(`${environment.api}/filter`, dto);
   }
 
+  findAllById(ids: number[]):Observable<Encurtador[]>{
+    return this.http.get<Encurtador[]>(`${environment.api}/${ids.join(",")}`);
+  }
+
 }
