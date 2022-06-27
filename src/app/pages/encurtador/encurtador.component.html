@@ -1,0 +1,17 @@
+<div class="container">
+    <h5>Encurtador by <a class="linkedin" href="https://www.linkedin.com/in/fabriciojuniorsc/" target="_blank">Fabricio
+            Junior</a></h5>
+
+    <form [formGroup]="formulario" (submit)="encurtar()" style="padding-bottom: 80px;">
+        <div class="form-group">
+            <input type="text" class="form-control" formControlName="url" placeholder="Informe o endereço">
+        </div>
+        <button class="btn" type="submit" [disabled]="!formulario.valid">
+            Encurtar
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
+        </button>
+    </form>
+
+    <app-toasts aria-live="polite" aria-atomic="true"></app-toasts>
+    <detalhe-encurtador *ngFor="let e of encurtados" [encurtado]="e"></detalhe-encurtador>
+</div>

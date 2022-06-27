@@ -1,0 +1,51 @@
+.container {
+    padding-top: 5%;
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .container {
+        padding-top: 2%;
+        width: 50%;
+    }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    .container{
+        padding-top: 2%;
+        width: 50%;
+    }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+    .container{
+        padding-top: 2%;
+        width: 50%;
+    }
+}
+
+
+.linkedin {
+    color: var(--mint-cream);
+    font-weight: bold;
+}
+
+input {
+    margin-top: 5%;
+    background-color: transparent;
+    color: var(--mint-cream);
+}
+
+input:focus {
+    background-color: transparent;
+    border-color: var(--mint-cream);
+    color: var(--mint-cream);
+}
+
+.btn {
+    margin-top: 2%;
+    background-color: var(--medium-turquoise);
+    border: none;
+    float: right;
+}
